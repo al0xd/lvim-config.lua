@@ -250,6 +250,34 @@ lvim.plugins = {
       }
     end,
   },
+  {
+    "andymass/vim-matchup",
+    event = "CursorMoved",
+    config = function()
+      vim.g.matchup_matchparen_offscreen = { method = "popup" }
+    end,
+  },
+  {
+    "tzachar/cmp-tabnine",
+    run = "./install.sh",
+    requires = "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+  },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "BufRead",
+    config = function()
+      require "lsp_signature".setup()
+    end
+  },
+  {
+    "folke/trouble.nvim",
+      cmd = "TroubleToggle",
+  },
+  {
+    "sindrets/diffview.nvim",
+    event = "BufRead",
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
