@@ -217,6 +217,7 @@ lvim.plugins = {
   {
     "wakatime/vim-wakatime"
   },
+  {"lunarvim/colorschemes"},
   {
     "tiagovla/tokyodark.nvim"
   },
@@ -278,6 +279,15 @@ lvim.plugins = {
     "sindrets/diffview.nvim",
     event = "BufRead",
   },
+{
+  "phaazon/hop.nvim",
+  event = "BufRead",
+  config = function()
+    require("hop").setup()
+    vim.api.nvim_set_keymap("n", "s", ":HopLine<cr>", { silent = true })
+    vim.api.nvim_set_keymap("n", "S", ":HopWord<cr>", { silent = true })
+  end,
+},
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
