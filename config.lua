@@ -60,7 +60,7 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
+lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 lvim.builtin.telescope.defaults.initial_mode = "insert"
 lvim.builtin.telescope.defaults.layout_config.horizontal.mirror = false
@@ -205,27 +205,11 @@ lvim.plugins = {
         end
   },
   {
-    'wfxr/minimap.vim',
-    run = "cargo install --locked code-minimap",
-    -- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
-    config = function ()
-      vim.cmd ("let g:minimap_width = 10")
-      vim.cmd ("let g:minimap_auto_start = 1")
-      vim.cmd ("let g:minimap_auto_start_win_enter = 1")
-    end,
-  },
-  {
     "wakatime/vim-wakatime"
   },
   {"lunarvim/colorschemes"},
   {
     "tiagovla/tokyodark.nvim"
-  },
-  {
-    "Pocco81/AutoSave.nvim",
-    config = function()
-      require("autosave").setup()
-    end,
   },
   {
 		"ethanholz/nvim-lastplace",
@@ -323,4 +307,3 @@ code_actions.setup {
     command = "proselint"
   },
 }
-
